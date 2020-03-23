@@ -35,9 +35,14 @@ class ViewController: UIViewController {
         present(ac, animated: true)
 
     }
+    @objc func viewScore(){
+        let ac = UIAlertController(title: "Score",  message: "Your score is \(score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .default))
+        present(ac, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(viewScore))
         countries.append("estonia")
         countries.append("france")
         countries.append("germany")
