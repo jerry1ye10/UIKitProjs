@@ -16,17 +16,21 @@ class ViewController: UIViewController {
     var score = 0
     var correctAnswer = 0
     var countries = [String]()
+    var questionsAsked = 0
     @IBAction func buttonTapped(_ sender: UIButton) {
         var title: String
+        var msg: String
         if sender.tag == correctAnswer{
             title = "Correct"
             score += 1
+            msg = ""
         }
         else{
             title = "Wrong"
             score -= 1
+            msg = "You chose the flag of \(countries[sender.tag]). "
         }
-        let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+        let ac = UIAlertController(title: title, message: msg + "Your score is \(score)", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         present(ac, animated: true)
 
@@ -58,12 +62,19 @@ class ViewController: UIViewController {
     }
     
     func askQuestion(action: UIAlertAction! = nil) {
+        if questionsAsked == 10{
+            let ac = UIAlertController(title: "Final Score", message: "This is your final score of \(score)", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Continue", style: .default))
+            present(ac, animated: true)
+            
+        }
+        questionsAsked += 1
         countries.shuffle()
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         correctAnswer = Int.random(in: 0...2)
-        title = countries[correctAnswer].uppercased()
+        title = "\(countries[correctAnswer].uppercased())   Score: \(score)"
     }
 
 
