@@ -9,11 +9,25 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var image: String? 
 
+    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = UIImage(named: image!)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareFlag))
 
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func shareFlag(){
+        guard let image = imageView.image?.jpegData(compressionQuality: 0.8)else{
+            print("No image")
+            return
+        }
+        let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        present(vc, animated: true)
     }
     
 
