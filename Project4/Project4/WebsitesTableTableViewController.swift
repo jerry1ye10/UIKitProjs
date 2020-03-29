@@ -9,6 +9,7 @@
 import UIKit
 
 class WebsitesTableTableViewController: UITableViewController {
+    var websites = ["apple.com", "hackingwithswift.com"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,23 +25,28 @@ class WebsitesTableTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return websites.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "website", for: indexPath)
+        cell.textLabel?.text = websites[indexPath.row]
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(identifier: "web") as? ViewController{
+            vc.initialSite = indexPath.row
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

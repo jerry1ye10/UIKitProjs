@@ -13,6 +13,7 @@
 		F583B524242AAABD0016BE7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F583B522242AAABD0016BE7B /* Main.storyboard */; };
 		F583B526242AAABF0016BE7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F583B525242AAABF0016BE7B /* Assets.xcassets */; };
 		F583B529242AAABF0016BE7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F583B527242AAABF0016BE7B /* LaunchScreen.storyboard */; };
+		F583B531242B75180016BE7B /* WebsitesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583B530242B75180016BE7B /* WebsitesTableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F583B525242AAABF0016BE7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F583B528242AAABF0016BE7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F583B52A242AAABF0016BE7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F583B530242B75180016BE7B /* WebsitesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsitesTableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				F583B51C242AAABD0016BE7B /* AppDelegate.swift */,
 				F583B51E242AAABD0016BE7B /* SceneDelegate.swift */,
 				F583B520242AAABD0016BE7B /* ViewController.swift */,
+				F583B530242B75180016BE7B /* WebsitesTableTableViewController.swift */,
 				F583B522242AAABD0016BE7B /* Main.storyboard */,
 				F583B525242AAABF0016BE7B /* Assets.xcassets */,
 				F583B527242AAABF0016BE7B /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				F583B521242AAABD0016BE7B /* ViewController.swift in Sources */,
 				F583B51D242AAABD0016BE7B /* AppDelegate.swift in Sources */,
+				F583B531242B75180016BE7B /* WebsitesTableTableViewController.swift in Sources */,
 				F583B51F242AAABD0016BE7B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
