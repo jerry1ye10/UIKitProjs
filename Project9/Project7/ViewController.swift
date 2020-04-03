@@ -22,15 +22,19 @@ class ViewController: UITableViewController {
             // urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
             urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
         }
+        DispatchQueue.global().async{
         if let url = URL(string: urlString){
             if let data = try? Data(contentsOf: url){
                 let decoder = JSONDecoder()
 
                 if let jsonPetitions = try? decoder.decode(Petitions.self, from: data) {
-                    petitions = jsonPetitions.results
-                    tableView.reloadData()
+                    DispatchQueue.main.async{
+                        self.petitions = jsonPetitions.results
+                    self.tableView.reloadData()
+                    }
                 }
             }
+        }
         }
         // Do any additional setup after loading the view.
     }
